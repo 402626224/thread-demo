@@ -7,7 +7,7 @@ package com.tuandai.thread.threadstatus;
 public class ThreadPriortity {
 
     public static void main(String[] args) {
-        
+
     }
 
 }
