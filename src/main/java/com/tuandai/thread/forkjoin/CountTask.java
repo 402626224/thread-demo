@@ -22,7 +22,6 @@ public class CountTask extends RecursiveTask<Integer> {
     @Override
     protected Integer compute() {
         int sum = 0;
-
         // 如果任务足够小就计算任务
         boolean canCompute = (end - start) <= THRESHOLD;
         if (canCompute) {
@@ -34,13 +33,13 @@ public class CountTask extends RecursiveTask<Integer> {
             int middle = (start + end) / 2;
             CountTask leftTask = new CountTask(start, middle);
             CountTask rightTask = new CountTask(middle + 1, end);
-
+            // 执行子任务
             leftTask.fork();
             rightTask.fork();
-            //等待子任务执行完，并得到结果
+            // 等待子任务执行完，并得到结果
             int leftResult = leftTask.join();
             int rightResult = rightTask.join();
-            //合并子任务结果
+            // 合并子任务结果
             sum = leftResult + rightResult;
         }
         return sum;
