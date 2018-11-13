@@ -5,6 +5,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
+ * 线程间交换数据的 Exchanger
  * Created by liusongrui on 2018/11/13.
  */
 public class ExchangerCase {
